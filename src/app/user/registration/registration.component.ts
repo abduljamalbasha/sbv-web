@@ -1,31 +1,28 @@
 import { Component, OnInit } from "@angular/core";
-import { NgbModalConfig, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { RegistrationService } from "src/app/registration/registration.service";
+import { NotificationService } from "src/app/shared/notification.service";
+import { UploadService } from "src/app/services/upload.service";
+import { UserDetail } from "src/app/models/userDetail.module";
 import { NgForm } from "@angular/forms";
-import { Users } from "../models/user.module";
-import { UserDetail } from "../models/userDetail.module";
-import { RegistrationService } from "./registration.service";
-
-import { NotificationService } from "../shared/notification.service";
-import { UploadService } from "../services/upload.service";
 
 @Component({
   selector: "app-registration",
   templateUrl: "./registration.component.html",
-  styleUrls: ["./registration.component.css"],
-  providers: [RegistrationService, NgbModalConfig, NgbModal]
+  styleUrls: ["./registration.component.css"]
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponentNew implements OnInit {
   constructor(
     private modalService: NgbModal,
     private registrationService: RegistrationService,
     private notifyService: NotificationService,
     private uploadService: UploadService
   ) {}
+
   //test jamal
   selectedFiles: FileList;
 
   user: UserDetail = {
-    //personalDetail:{
     Id: null,
     fullname: "",
     firstname: "",
@@ -47,26 +44,23 @@ export class RegistrationComponent implements OnInit {
     maritalStatus: "",
     religion: "",
     familyGod: "",
-    //}
-    //,familyDetail:{
+
     fathername: "",
     mothername: "",
     fatherOccupation: "",
     motherOccupation: "",
-    //sibblings:{
+
     sibblingsMale: null,
     sibblingsFemale: null,
-    //},
-    //marriedSibblings:{
+
     marriedSibblingsMale: null,
     marriedSibblingsFemale: null,
-    //},
+
     origin: "",
     native: "",
     assets: "",
     dowry: "",
-    //},
-    //horoscopeDetails:{
+
     star: "",
     rasi: "",
     lagnam: "",
@@ -74,7 +68,7 @@ export class RegistrationComponent implements OnInit {
     year: "",
     month: "",
     day: "",
-    //rasibox:{
+
     ra1: "",
     ra2: "",
     ra3: "",
@@ -87,8 +81,7 @@ export class RegistrationComponent implements OnInit {
     ra10: "",
     ra11: "",
     ra12: "",
-    //},
-    //feature:{
+
     f1: "",
     f2: "",
     f3: "",
@@ -101,7 +94,7 @@ export class RegistrationComponent implements OnInit {
     f10: "",
     f11: "",
     f12: "",
-    //},
+
     address: "",
     district: "",
     phone1: null,
@@ -111,13 +104,11 @@ export class RegistrationComponent implements OnInit {
     expectations: "",
     otherMessage: "",
     userImage: null
-    //}
   };
 
   resetForm(form?: NgForm) {
     if (form) form.reset();
     this.registrationService.selectedUser = {
-      //personalDetail:{
       Id: null,
       fullname: "",
       firstname: "",
@@ -139,26 +130,23 @@ export class RegistrationComponent implements OnInit {
       maritalStatus: "",
       religion: "",
       familyGod: "",
-      //}
-      //,familyDetail:{
+
       fathername: "",
       mothername: "",
       fatherOccupation: "",
       motherOccupation: "",
-      //sibblings:{
+
       sibblingsMale: null,
       sibblingsFemale: null,
-      //},
-      //marriedSibblings:{
+
       marriedSibblingsMale: null,
       marriedSibblingsFemale: null,
-      //},
+
       origin: "",
       native: "",
       assets: "",
       dowry: "",
-      //},
-      //horoscopeDetails:{
+
       star: "",
       rasi: "",
       lagnam: "",
@@ -166,7 +154,7 @@ export class RegistrationComponent implements OnInit {
       year: "",
       month: "",
       day: "",
-      //rasibox:{
+
       ra1: "",
       ra2: "",
       ra3: "",
@@ -179,8 +167,7 @@ export class RegistrationComponent implements OnInit {
       ra10: "",
       ra11: "",
       ra12: "",
-      //},
-      //feature:{
+
       f1: "",
       f2: "",
       f3: "",
@@ -193,7 +180,7 @@ export class RegistrationComponent implements OnInit {
       f10: "",
       f11: "",
       f12: "",
-      //},
+
       address: "",
       district: "",
       phone1: null,
@@ -203,7 +190,6 @@ export class RegistrationComponent implements OnInit {
       expectations: "",
       otherMessage: "",
       userImage: null
-      //}
     };
   }
 
@@ -224,12 +210,8 @@ export class RegistrationComponent implements OnInit {
     }
   }
   onSubmit(NewUser: UserDetail) {
-    //console.log(NewUser);
-
-    //test jamal upload file to s3 buket
-    //this.upload();
-
-    if (NewUser.fullname != "") {
+    console.log(NewUser.gender);
+    if (NewUser.firstname != "") {
       this.registrationService.registerMember(NewUser).subscribe(res => {
         //this.resetForm();
         //console.log(res);
@@ -243,8 +225,4 @@ export class RegistrationComponent implements OnInit {
     const file = this.selectedFiles.item(0);
     this.uploadService.uploadFile(file);
   }
-
-  // onSelectedFile(event) {
-  //   this.selectedFiles = event.target.files;
-  // }
 }

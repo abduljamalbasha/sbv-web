@@ -1,4 +1,9 @@
-<div class="container">
+
+<div class="row">
+<app-header></app-header>
+</div>
+
+<div class="container registrationForm">
   <form #registerUserForm="ngForm" (ngSubmit)="onSubmit(user)" enctype="multipart/form-data">
      <!-- <input type="hidden" name="_id" #_idControl="ngModel" [(ngModel)]="user._id"  > -->
 
@@ -6,136 +11,136 @@
   <div class="card-header">
   Personal Details
   </div>
-  <div class="card-body">
-  <div class="row">
-      <div class="col-sm-6 form-group">
-        <label>பெயர்
-          <label for="" class="requiredstart">*</label>
-        </label>
-        <input type="text" required name="fullname" [(ngModel)]="user.fullname" placeholder="Enter your full name" class="form-control">
-      </div>
-      <div class="col-sm-6 form-group">
-        <label>பாலினம்</label>
-        <label class="radio-inline"><input type="radio" name="gender" [(ngModel)]="user.gender"  value=Male>Male</label>
-        <label class="radio-inline"><input type="radio" name="gender"  [(ngModel)]="user.gender"    value=Female>Female</label>
-      </div>              
-    </div>			
-    
-    <div class="row">
-      <div class="col-sm-6 form-group">
-        <label>இனம்</label>
-        <select class="form-control" name="motherTongue" [(ngModel)]="user.motherTongue"  >
-            <option class="hidden"  selected disabled>Select Mother Tongue</option>
-            <option value="Tamil">Tamil</option>
-            <option value="Urdu">Urdu</option>
-            <option value="Telugu">Telugu</option>
-            <option value="Hindi">Hindi</option>
-            </select> 
-      </div>
-      <div class="col-sm-6 form-group">
-        <label>உட்பிரிவு</label>
-        <input type="text" placeholder="" name="Clause" [(ngModel)]="user.Clause"  class="form-control">
-      </div>              
-    </div>
-
+    <div class="card-body">
     <div class="row">
         <div class="col-sm-6 form-group">
-          <label>பிறந்த நாள்</label>
-          <input type="date" placeholder="" name="dob" [(ngModel)]="user.dob"  class="form-control">
+          <label>பெயர்
+            <label for="" class="requiredstart">*</label>
+          </label>
+          <input type="text" required name="fullname" [(ngModel)]="user.fullname" placeholder="Enter your full name" class="form-control">
         </div>
-        <div class="col-sm-6 form-group">                    
-            <div class="row">
-                <div class="col-sm-6 form-group">
-                  <label>பிறந்த நேரம்</label>
-                  <input type="date" placeholder="" name="birthTime" [(ngModel)]="user.birthTime" class="form-control">
-                </div>
-                <div class="col-sm-6 form-group">
-                  <label>வயது</label>
-                  <input type="number" placeholder="" name="age" [(ngModel)]="user.age" class="form-control">
-                </div>              
-              </div>
+        <div class="col-sm-6 form-group">
+          <label>பாலினம்</label>
+          <label class="radio-inline"><input type="radio" name="gender" [(ngModel)]="user.gender"  value=Male>Male</label>
+          <label class="radio-inline"><input type="radio" name="gender"  [(ngModel)]="user.gender"    value=Female>Female</label>
+        </div>              
+      </div>			
+      
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>இனம்</label>
+          <select class="form-control" name="motherTongue" [(ngModel)]="user.motherTongue"  >
+              <option class="hidden"  selected disabled>Select Mother Tongue</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Urdu">Urdu</option>
+              <option value="Telugu">Telugu</option>
+              <option value="Hindi">Hindi</option>
+              </select> 
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>உட்பிரிவு</label>
+          <input type="text" placeholder="" name="Clause" [(ngModel)]="user.Clause"  class="form-control">
         </div>              
       </div>
 
-
       <div class="row">
           <div class="col-sm-6 form-group">
-            <label>உயரம்</label>
-            <select class="form-control" name="height" 
-            [(ngModel)]="user.height"  >
-                <option value="">--- Select Height ---</option>
-                <option value="3.5">3ft.5in-105cm</option><option value="3.6">3ft.6in-107cm</option><option value="3.7">3ft.7in-110cm</option><option value="3.8">3ft.8in-112cm</option><option value="3.9">3ft.9in-115cm</option><option value="3.10">3ft.10in-117cm</option><option value="3.11">3ft.11in-120cm</option><option value="4">4ft-122cm</option><option value="4.1">4ft.1in-125cm</option><option value="4.2">4ft.2in-127cm</option><option value="4.3">4ft.3in-130cm</option><option value="4.4">4ft.4in-132cm</option><option value="4.5">4ft.5in-135cm</option><option value="4.6">4ft.6in-137cm</option><option value="4.7">4ft.7in-140cm</option><option value="4.8">4ft.8in-142cm</option><option value="4.9">4ft.9in-145cm</option><option value="4.10">4ft.10in-147cm</option><option value="4.11">4ft.11in-150cm</option><option value="5">5ft-152cm</option><option value="5.1">5ft.1in-155cm</option><option value="5.2">5ft.2in-157cm</option><option value="5.3">5ft.3in-160cm</option><option value="5.4">5ft.4in-162cm</option><option value="5.5">5ft.5in-165cm</option><option value="5.6">5ft.6in-167cm</option><option value="5.7">5ft.7in-170cm</option><option value="5.8">5ft.8in-172cm</option><option value="5.9">5ft.9in-175cm</option><option value="5.10">5ft.10in-177cm</option><option value="5.11">5ft.11in-180cm</option><option value="6">6ft-182cm</option><option value="6.1">6ft.1in-185cm</option><option value="6.2">6ft.2in-187cm</option><option value="6.3">6ft.3in-190cm</option><option value="6.4">6ft.4in-192cm</option><option value="6.5">6ft.5in-195cm</option><option value="6.6">6ft.6in-197cm</option><option value="6.7">6ft.7in-200cm</option><option value="6.8">6ft.8in-202cm</option><option value="6.9">6ft.9in-205cm</option><option value="6.10">6ft.10in-207cm</option><option value="6.11">6ft.11in-210cm</option>		
-                </select> 
+            <label>பிறந்த நாள்</label>
+            <input type="date" placeholder="" name="dob" [(ngModel)]="user.dob"  class="form-control">
           </div>
-          <div class="col-sm-6 form-group">
-            <label>நிறம்</label>
-            <select class="form-control" name="color" [(ngModel)]="user.color" >
-            <option value="">--- Select Complexion ---</option>
-            <option value="Fair">சிவப்பு</option>
-            <option value="Putuniram">புதுநிறம்</option>
-            <option value="Black">கருப்பு</option>
-            <option value="Brunette">மாநிறம்</option>
-        </select>                       
+          <div class="col-sm-6 form-group">                    
+              <div class="row">
+                  <div class="col-sm-6 form-group">
+                    <label>பிறந்த நேரம்</label>
+                    <input type="date" placeholder="" name="birthTime" [(ngModel)]="user.birthTime" class="form-control">
+                  </div>
+                  <div class="col-sm-6 form-group">
+                    <label>வயது</label>
+                    <input type="number" placeholder="" name="age" [(ngModel)]="user.age" class="form-control">
+                  </div>              
+                </div>
           </div>              
         </div>
 
+
         <div class="row">
             <div class="col-sm-6 form-group">
-                <label>கல்வி</label>
-                <input type="text" placeholder="" name="qualificaton" [(ngModel)]="user.qualificaton" class="form-control">
+              <label>உயரம்</label>
+              <select class="form-control" name="height" 
+              [(ngModel)]="user.height"  >
+                  <option value="">--- Select Height ---</option>
+                  <option value="3.5">3ft.5in-105cm</option><option value="3.6">3ft.6in-107cm</option><option value="3.7">3ft.7in-110cm</option><option value="3.8">3ft.8in-112cm</option><option value="3.9">3ft.9in-115cm</option><option value="3.10">3ft.10in-117cm</option><option value="3.11">3ft.11in-120cm</option><option value="4">4ft-122cm</option><option value="4.1">4ft.1in-125cm</option><option value="4.2">4ft.2in-127cm</option><option value="4.3">4ft.3in-130cm</option><option value="4.4">4ft.4in-132cm</option><option value="4.5">4ft.5in-135cm</option><option value="4.6">4ft.6in-137cm</option><option value="4.7">4ft.7in-140cm</option><option value="4.8">4ft.8in-142cm</option><option value="4.9">4ft.9in-145cm</option><option value="4.10">4ft.10in-147cm</option><option value="4.11">4ft.11in-150cm</option><option value="5">5ft-152cm</option><option value="5.1">5ft.1in-155cm</option><option value="5.2">5ft.2in-157cm</option><option value="5.3">5ft.3in-160cm</option><option value="5.4">5ft.4in-162cm</option><option value="5.5">5ft.5in-165cm</option><option value="5.6">5ft.6in-167cm</option><option value="5.7">5ft.7in-170cm</option><option value="5.8">5ft.8in-172cm</option><option value="5.9">5ft.9in-175cm</option><option value="5.10">5ft.10in-177cm</option><option value="5.11">5ft.11in-180cm</option><option value="6">6ft-182cm</option><option value="6.1">6ft.1in-185cm</option><option value="6.2">6ft.2in-187cm</option><option value="6.3">6ft.3in-190cm</option><option value="6.4">6ft.4in-192cm</option><option value="6.5">6ft.5in-195cm</option><option value="6.6">6ft.6in-197cm</option><option value="6.7">6ft.7in-200cm</option><option value="6.8">6ft.8in-202cm</option><option value="6.9">6ft.9in-205cm</option><option value="6.10">6ft.10in-207cm</option><option value="6.11">6ft.11in-210cm</option>		
+                  </select> 
             </div>
             <div class="col-sm-6 form-group">
-                <label>தொழில்/ வேலை</label>
-                    <input type="text" placeholder=""  name="occupation" [(ngModel)]="user.occupation" class="form-control">
+              <label>நிறம்</label>
+              <select class="form-control" name="color" [(ngModel)]="user.color" >
+              <option value="">--- Select Complexion ---</option>
+              <option value="Fair">சிவப்பு</option>
+              <option value="Putuniram">புதுநிறம்</option>
+              <option value="Black">கருப்பு</option>
+              <option value="Brunette">மாநிறம்</option>
+          </select>                       
             </div>              
           </div>
 
           <div class="row">
               <div class="col-sm-6 form-group">
-                  <label>பணிபுரியுமிடம்</label>
-                  <input type="text" placeholder="" name="work" [(ngModel)]="user.work" class="form-control">
+                  <label>கல்வி</label>
+                  <input type="text" placeholder="" name="qualificaton" [(ngModel)]="user.qualificaton" class="form-control">
               </div>
               <div class="col-sm-6 form-group">
-                  <label>வருமானம்</label>
-                      <input type="text" name="earnings" [(ngModel)]="user.earnings"  placeholder="" class="form-control">
+                  <label>தொழில்/ வேலை</label>
+                      <input type="text" placeholder=""  name="occupation" [(ngModel)]="user.occupation" class="form-control">
               </div>              
             </div>
 
-    
-
             <div class="row">
                 <div class="col-sm-6 form-group">
-                  <label>உடல் தகுதி</label>
-                  <select class="form-control" name="physicalFitness" [(ngModel)]="user.physicalFitness">
-                      <option value="normal">இயல்பு நிலை</option>
-                      <option value="physicallyChallanged">மாற்றுத் திறனாளி</option>
-                      </select> 
+                    <label>பணிபுரியுமிடம்</label>
+                    <input type="text" placeholder="" name="work" [(ngModel)]="user.work" class="form-control">
                 </div>
                 <div class="col-sm-6 form-group">
-                  <label>திருமண நிலை</label>
-                  <select class="form-control" name="maritalStatus" [(ngModel)]="user.maritalStatus">
-                      <option value="unmarried">திருமணமாகதவர்</option>
-                      <option value="remarry">மறுமணம்</option>
-                      </select> 
+                    <label>வருமானம்</label>
+                        <input type="text" name="earnings" [(ngModel)]="user.earnings"  placeholder="" class="form-control">
                 </div>              
               </div>
 
+      
+
               <div class="row">
                   <div class="col-sm-6 form-group">
-                    <label>மதம்</label>
-                    <select class="form-control" name="religion" [(ngModel)]="user.religion">
-                        <option value="">- தேர்ந்தெடு -</option>
-                        <option value="Hindu" selected="">இந்து</option>
-                        <option value="Christine">கிறிஸ்டின்</option>
-                        <option value="Muslim">முஸ்லிம்</option>
+                    <label>உடல் தகுதி</label>
+                    <select class="form-control" name="physicalFitness" [(ngModel)]="user.physicalFitness">
+                        <option value="normal">இயல்பு நிலை</option>
+                        <option value="physicallyChallanged">மாற்றுத் திறனாளி</option>
                         </select> 
                   </div>
                   <div class="col-sm-6 form-group">
-                    <label>குலதெய்வம்</label>
-                    <input type="text" name="familyGod" [(ngModel)]="user.familyGod" placeholder="" class="form-control">
+                    <label>திருமண நிலை</label>
+                    <select class="form-control" name="maritalStatus" [(ngModel)]="user.maritalStatus">
+                        <option value="unmarried">திருமணமாகதவர்</option>
+                        <option value="remarry">மறுமணம்</option>
+                        </select> 
                   </div>              
-              </div>
-        </div>  
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                      <label>மதம்</label>
+                      <select class="form-control" name="religion" [(ngModel)]="user.religion">
+                          <option value="">- தேர்ந்தெடு -</option>
+                          <option value="Hindu" selected="">இந்து</option>
+                          <option value="Christine">கிறிஸ்டின்</option>
+                          <option value="Muslim">முஸ்லிம்</option>
+                          </select> 
+                    </div>
+                    <div class="col-sm-6 form-group">
+                      <label>குலதெய்வம்</label>
+                      <input type="text" name="familyGod" [(ngModel)]="user.familyGod" placeholder="" class="form-control">
+                    </div>              
+                </div>
+          </div>  
   </div>
 
 
@@ -516,4 +521,4 @@
       </div>
     </ng-template>
 
-   
+   <app-footer></app-footer>

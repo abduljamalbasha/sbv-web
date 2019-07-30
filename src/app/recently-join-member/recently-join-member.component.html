@@ -1,3 +1,4 @@
+<app-header></app-header>
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   rel="stylesheet"
@@ -12,7 +13,7 @@
   <div class="container">
     <div class="row">
       <!-- Team member -->
-      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let user of users">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let user of usersDetail">
         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
           <div class="mainflip">
             <div class="frontside">
@@ -29,13 +30,11 @@
                   </p>
                   <h4 class="card-title">{{ user.fullname }}</h4>
                   <p class="card-text">
+                    {{ user.emailId }}
                     {{ user.age }} Yrs {{ 0.0328 * user.height }} ft - <br />{{
                       user.native
                     }}, {{ user.district }}
                   </p>
-                  <!-- <a href="#" class="btn btn-primary btn-sm"
-                    ><i class="fa fa-plus"></i
-                  ></a> -->
                 </div>
               </div>
             </div>
@@ -52,7 +51,7 @@
                         class="social-icon text-xs-center"
                         (click)="downloadFile($event)"
                       >
-                        <i class="fa fa-download" id="{{ user._id }}"></i>
+                        <i class="fa fa-download" id="{{ user.Id }}"></i>
                       </a>
                     </li>
                   </ul>
@@ -67,3 +66,4 @@
   </div>
 </section>
 <!-- Team -->
+<app-footer></app-footer>

@@ -4,7 +4,9 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { FormsModule } from "@angular/forms";
 
 import { ToastrModule } from "ngx-toastr";
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule, RoutingComponents } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -21,6 +23,10 @@ import { NgtUniversalModule } from "@ng-toolkit/universal";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { FileuploadComponent } from "./features/fileupload/fileupload.component";
 import { UserDetailComponent } from "./user/user-detail/user-detail.component";
+import { LoginComponent } from "./Authentication/login/login.component";
+import { RegistrationComponentNew } from "./user/registration/registration.component";
+
+import { MaterialModulesModule } from "./shared/material-modules/material-modules.module";
 
 @NgModule({
   declarations: [
@@ -34,7 +40,9 @@ import { UserDetailComponent } from "./user/user-detail/user-detail.component";
     RoutingComponents,
     PageNotFoundComponent,
     FileuploadComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    LoginComponent,
+    RegistrationComponentNew
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
@@ -46,7 +54,12 @@ import { UserDetailComponent } from "./user/user-detail/user-detail.component";
     NgtUniversalModule,
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+
+    // MatCheckboxModule,
+    // MatButtonModule,
+    MaterialModulesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

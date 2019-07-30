@@ -1,5 +1,5 @@
 <div class="container" style="background-color:#bfbebe;padding:2%" #pdfcontent>
-  <h4>CASTE : {{ user.religion }}</h4>
+  <!-- <h4>CASTE : {{ user.religion }}</h4> -->
 
   <img
     src="../../../assets/Images/banner.jpg"
@@ -8,37 +8,54 @@
     alt="sbvMatrimony Logo"
   />
   <br />
-  <table border="1">
+
+  <table>
+    <thead>
+      Name
+    </thead>
+    <thead>
+      Email
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ userdetail.fullname }}</td>
+      </tr>
+      <tr>
+        <td>{{ userdetail.emailId }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <table border="1">
     <tbody>
       <tr>
         <td>
           <tr>
             <td><label for="">Name</label></td>
-            <td>{{ user.fullname }}</td>
+            <td>{{ userdetail.fullname }}</td>
           </tr>
           <tr>
             <td><label for="">D.O.B & Age</label></td>
-            <td>: {{ user.birthTime + " (" + user.age + ")" }}</td>
+            <td>: {{ userdetail.birthTime + " (" + userdetail.age + ")" }}</td>
           </tr>
           <tr>
             <td><label for="">Qualification</label></td>
-            <td>: {{ user.qualificaton }}</td>
+            <td>: {{ UserDetail.qualificaton }}</td>
           </tr>
           <tr>
             <td><label for="">Work</label></td>
-            <td>: {{ user.occupation }}</td>
+            <td>: {{ UserDetail.occupation }}</td>
           </tr>
           <tr>
             <td><label for="">Martial Status</label></td>
-            <td>: {{ user.maritalStatus }}</td>
+            <td>: {{ UserDetail.maritalStatus }}</td>
           </tr>
           <tr>
             <td><label for="">Father's Name</label></td>
-            <td>: {{ user.fathername }}</td>
+            <td>: {{ UserDetail.fathername }}</td>
           </tr>
           <tr>
             <td><label for="">Mother's Name</label></td>
-            <td>: {{ user.mothername }}</td>
+            <td>: {{ UserDetail.mothername }}</td>
           </tr>
           <tr>
             <td><label for="">Family Status</label></td>
@@ -46,7 +63,16 @@
           </tr>
           <tr>
             <td><label for="">Rasi/Star/Lagnam</label></td>
-            <td>: {{ user.rasi + "/" + user.star + "/" + user.lagnam }}</td>
+            <td>
+              :
+              {{
+                UserDetail.rasi +
+                  "/" +
+                  UserDetail.star +
+                  "/" +
+                  UserDetail.lagnam
+              }}
+            </td>
           </tr>
           <tr>
             <td><label for="">Brothers</label></td>
@@ -62,13 +88,13 @@
                 </tr>
                 <tr>
                   <td>Elder</td>
-                  <td>{{ user.sibblingsMale }}</td>
+                  <td>{{ UserDetail.sibblingsMale }}</td>
                   <td>0</td>
                 </tr>
                 <tr>
                   <td>Younger</td>
                   <td>0</td>
-                  <td>{{ user.marriedSibblingsMale }}</td>
+                  <td>{{ UserDetail.marriedSibblingsMale }}</td>
                 </tr>
               </table>
             </td>
@@ -87,31 +113,31 @@
                 </tr>
                 <tr>
                   <td>Elder</td>
-                  <td>{{ user.sibblingsFemale }}</td>
+                  <td>{{ UserDetail.sibblingsFemale }}</td>
                   <td>0</td>
                 </tr>
                 <tr>
                   <td>Younger</td>
                   <td>0</td>
-                  <td>{{ user.marriedSibblingsFemale }}</td>
+                  <td>{{ UserDetail.marriedSibblingsFemale }}</td>
                 </tr>
               </table>
             </td>
           </tr>
           <tr>
             <td><label for="">Addres</label></td>
-            <td>: {{ user.address }}</td>
+            <td>: {{ UserDetail.address }}</td>
           </tr>
           <tr>
             <td><label for="">Phone</label></td>
-            <td>: {{ user.phone1 }}</td>
+            <td>: {{ UserDetail.phone1 }}</td>
           </tr>
         </td>
 
         <td colspan="14">
           <img
             class=" img-fluid"
-            [src]="serverdomain + user.userImage.replace('public', '')"
+            [src]="serverdomain + UserDetail.userImage.replace('public', '')"
             alt="card image"
             height="100%"
           />
@@ -134,34 +160,34 @@
                 >
                   <tbody>
                     <tr>
-                      <td height="50" width="50">{{ user.ra1 }}</td>
-                      <td height="50" width="50">{{ user.ra2 }}</td>
-                      <td height="50" width="50">{{ user.ra3 }}</td>
-                      <td height="50" width="50">{{ user.ra4 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra1 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra2 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra3 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra4 }}</td>
                     </tr>
                     <tr>
-                      <td height="50" width="50">{{ user.ra5 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra5 }}</td>
                       <td height="100" colspan="2" rowspan="2" align="center">
                         ராசி
                       </td>
-                      <td height="50" width="50">{{ user.ra6 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra6 }}</td>
                     </tr>
                     <tr>
-                      <td height="50" width="50">{{ user.ra7 }}</td>
-                      <td height="50" width="50">{{ user.ra8 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra7 }}</td>
+                      <td height="50" width="50">{{ UserDetail.ra8 }}</td>
                     </tr>
                     <tr>
                       <td height="50" width="50">
-                        {{ user.ra9 }}
+                        {{ UserDetail.ra9 }}
                       </td>
                       <td height="50" width="50">
-                        {{ user.ra10 }}
+                        {{ UserDetail.ra10 }}
                       </td>
                       <td height="50" width="50">
-                        {{ user.ra11 }}
+                        {{ UserDetail.ra11 }}
                       </td>
                       <td height="50" width="50">
-                        {{ user.ra12 }}
+                        {{ UserDetail.ra12 }}
                       </td>
                     </tr>
                   </tbody>
@@ -177,49 +203,49 @@
                   <tbody>
                     <tr>
                       <td>
-                        {{ user.f1 }}
+                        {{ UserDetail.f1 }}
                       </td>
                       <td>
-                        {{ user.f2 }}
+                        {{ UserDetail.f2 }}
                       </td>
                       <td>
-                        {{ user.f3 }}
+                        {{ UserDetail.f3 }}
                       </td>
                       <td>
-                        {{ user.f4 }}
+                        {{ UserDetail.f4 }}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        {{ user.f5 }}
+                        {{ UserDetail.f5 }}
                       </td>
                       <td height="100" colspan="2" rowspan="2" align="center">
                         அம்சம்
                       </td>
                       <td>
-                        {{ user.f6 }}
+                        {{ UserDetail.f6 }}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        {{ user.f7 }}
+                        {{ UserDetail.f7 }}
                       </td>
                       <td>
-                        {{ user.f8 }}
+                        {{ UserDetail.f8 }}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        {{ user.f9 }}
+                        {{ UserDetail.f9 }}
                       </td>
                       <td>
-                        {{ user.f10 }}
+                        {{ UserDetail.f10 }}
                       </td>
                       <td>
-                        {{ user.f11 }}
+                        {{ UserDetail.f11 }}
                       </td>
                       <td>
-                        {{ user.f12 }}
+                        {{ UserDetail.f12 }}
                       </td>
                     </tr>
                   </tbody>
@@ -231,255 +257,5 @@
         </td>
       </tr>
     </tbody>
-  </table>
-
-  <!-- <div class="row">
-    <div class="col-sm-6">
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Name</label>
-        </div>
-        <div class="col sm-11">: {{ user.fullname }}</div>
-      </div>
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">D.O.B & Age</label>
-        </div>
-        <div class="col sm-11">
-          : {{ user.birthTime + " (" + user.age + ")" }}
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Qualification</label>
-        </div>
-        <div class="col sm-11">: {{ user.qualificaton }}</div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Work</label>
-        </div>
-        <div class="col sm-11">: {{ user.occupation }}</div>
-      </div>
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Marital Status</label>
-        </div>
-        <div class="col sm-11">: {{ user.maritalStatus }}</div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Father's Name</label>
-        </div>
-        <div class="col sm-11">: {{ user.fathername }}</div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Mother's Name</label>
-        </div>
-        <div class="col sm-11">: {{ user.mothername }}</div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Family Status</label>
-        </div>
-        <div class="col sm-11">: Need to add this parameter</div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Rasi/Star/Lagnam</label>
-        </div>
-        <div class="col sm-11">
-          : {{ user.rasi + "/" + user.star + "/" + user.lagnam }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Brothers</label>
-        </div>
-        <div class="col sm-11">
-          <table
-            border="1px"
-            cellpadding="5"
-            style="border-collapse: collapse; text-align: center"
-          >
-            <tr>
-              <td colspan="2">Brother</td>
-              <td>Martial status</td>
-            </tr>
-            <tr>
-              <td>Elder</td>
-              <td>{{ user.sibblingsMale }}</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Younger</td>
-              <td>0</td>
-              <td>{{ user.marriedSibblingsMale }}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Sisters</label>
-        </div>
-        <div class="col sm-11">
-          <table
-            border="1px"
-            cellpadding="5"
-            style="border-collapse: collapse; text-align: center"
-          >
-            <tr>
-              <td colspan="2">Sisters</td>
-              <td>Martial status</td>
-            </tr>
-            <tr>
-              <td>Elder</td>
-              <td>{{ user.sibblingsFemale }}</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Younger</td>
-              <td>0</td>
-              <td>{{ user.marriedSibblingsFemale }}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Address</label>
-        </div>
-        <div class="col sm-11">: {{ user.address }}</div>
-      </div>
-
-      <div class="row">
-        <div class="col sm-1">
-          <label for="">Phone</label>
-        </div>
-        <div class="col sm-11">: {{ user.phone1 }}</div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <img
-        class=" img-fluid"
-        [src]="serverdomain + user.userImage.replace('public', '')"
-        alt="card image"
-        height="100%"
-      />
-    </div>
-  </div>
-  <div class="col-md-12 divborder1" style="margin-top: 1em;text-align:center;">
-    <div class="row">
-      <div class="col-md-2 divborder1"></div>
-      <div class=" col-xs-6 col-sm-6 col-md-4 divborder1 text-center">
-        <table
-          border="1"
-          cellpadding="5"
-          style="border-collapse: collapse"
-          height="200"
-        >
-          <tbody>
-            <tr>
-              <td height="50" width="50">{{ user.ra1 }}</td>
-              <td height="50" width="50">{{ user.ra2 }}</td>
-              <td height="50" width="50">{{ user.ra3 }}</td>
-              <td height="50" width="50">{{ user.ra4 }}</td>
-            </tr>
-            <tr>
-              <td height="50" width="50">{{ user.ra5 }}</td>
-              <td height="100" colspan="2" rowspan="2" align="center">ராசி</td>
-              <td height="50" width="50">{{ user.ra6 }}</td>
-            </tr>
-            <tr>
-              <td height="50" width="50">{{ user.ra7 }}</td>
-              <td height="50" width="50">{{ user.ra8 }}</td>
-            </tr>
-            <tr>
-              <td height="50" width="50">
-                {{ user.ra9 }}
-              </td>
-              <td height="50" width="50">
-                {{ user.ra10 }}
-              </td>
-              <td height="50" width="50">
-                {{ user.ra11 }}
-              </td>
-              <td height="50" width="50">
-                {{ user.ra12 }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class=" col-xs-12 col-sm-6 col-md-4 divborder1 text-center">
-        <table
-          border="1"
-          cellpadding="5"
-          style="border-collapse: collapse"
-          height="200"
-        >
-          <tbody>
-            <tr>
-              <td>
-                {{ user.f1 }}
-              </td>
-              <td>
-                {{ user.f2 }}
-              </td>
-              <td>
-                {{ user.f3 }}
-              </td>
-              <td>
-                {{ user.f4 }}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                {{ user.f5 }}
-              </td>
-              <td height="100" colspan="2" rowspan="2" align="center">
-                அம்சம்
-              </td>
-              <td>
-                {{ user.f6 }}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                {{ user.f7 }}
-              </td>
-              <td>
-                {{ user.f8 }}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                {{ user.f9 }}
-              </td>
-              <td>
-                {{ user.f10 }}
-              </td>
-              <td>
-                {{ user.f11 }}
-              </td>
-              <td>
-                {{ user.f12 }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-2 divborder1"></div>
-    </div>
-  </div> -->
+  </table> -->
 </div>

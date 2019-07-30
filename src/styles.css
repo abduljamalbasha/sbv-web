@@ -1,27 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    /* margin-right: -15px; */
-    /* margin-left: -15px; */
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-right: -15px; */
+  /* margin-left: -15px; */
 }
 
-a.active{
-    color:red;
+a.active {
+  color: red;
 }
 
-.pointer{
-    color: blue;
-    cursor: pointer;
+.pointer {
+  color: blue;
+  cursor: pointer;
 }
-.requiredstart{
-    color: red;
+.requiredstart {
+  color: red;
 }
 
-input.ng-invalid.ng-dirty{
-    border-bottom-color: red !important;
-    box-shadow: 0 1px 0 0 red !important;
-    }
-    
+input.ng-invalid.ng-dirty {
+  border-bottom-color: red !important;
+  box-shadow: 0 1px 0 0 red !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

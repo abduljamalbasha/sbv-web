@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseHref: "/",
-  Serverdomain: "http://localhost:2000/"
+  Serverdomain: "http://localhost:8080/"
 };
 
 /*

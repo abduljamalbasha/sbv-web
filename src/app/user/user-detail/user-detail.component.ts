@@ -17,6 +17,7 @@ import { environment } from "src/environments/environment";
 
 import * as jspdf from "jspdf";
 import html2canvas from "html2canvas";
+import { UserDetail } from "src/app/models/userDetail.module";
 
 @Component({
   selector: "app-user-detail",
@@ -38,6 +39,7 @@ export class UserDetailComponent
   serverdomain = environment.Serverdomain;
 
   user: User;
+  userdetail: UserDetail;
   @ViewChild("pdfcontent") pdfcontent: ElementRef;
 
   downloadpdf() {
@@ -68,10 +70,11 @@ export class UserDetailComponent
   }
   ngOnInit() {
     this.registrationServices
-      .getMemberById(this.route.snapshot.paramMap.get("id"))
+      .getMemberDetailById(this.route.snapshot.paramMap.get("id"))
       .subscribe(data => {
-        this.user = data;
-        console.log(this.user);
+        //this.user = data;
+        this.userdetail = Object.assign(data);
+        console.log(this.userdetail);
         //this.downloadpdf();
       });
   }

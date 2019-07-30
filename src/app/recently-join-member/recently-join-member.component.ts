@@ -6,6 +6,7 @@ import { environment } from "../../environments/environment";
 import * as jspdf from "jspdf";
 import html2canvas from "html2canvas";
 import { Router } from "@angular/router";
+import { UserDetail } from "../models/userDetail.module";
 
 @Component({
   selector: "app-recently-join-member",
@@ -14,6 +15,8 @@ import { Router } from "@angular/router";
 })
 export class RecentlyJoinMemberComponent implements OnInit {
   users: Users;
+  usersDetail: UserDetail[];
+
   serverdomain = environment.Serverdomain;
 
   constructor(
@@ -23,7 +26,7 @@ export class RecentlyJoinMemberComponent implements OnInit {
 
   ngOnInit() {
     this.memberServices.getAllMember().subscribe(data => {
-      this.users = Object.assign(data);
+      this.usersDetail = Object.assign(data);
     });
   }
 

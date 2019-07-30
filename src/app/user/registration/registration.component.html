@@ -1,0 +1,902 @@
+<div class="row">
+<app-header></app-header>
+</div>
+
+<div class="container-fluid registrationForm">
+<form 
+  #registerUserForm="ngForm"
+  (ngSubmit)="onSubmit(user)"
+  enctype="multipart/form-data"
+>
+  <div class="accordion" id="accordionRegistration">
+    <div class="card">
+      <div class="card-header" id="headingPersonalDetail">
+        <h2 class="mb-0">
+          <button
+            class="btn "
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsePersonalDetail"
+            aria-expanded="true"
+            aria-controls="collapsePersonalDetail"
+          >
+            Personal Details
+          </button>
+        </h2>
+      </div>
+
+      <div
+        id="collapsePersonalDetail"
+        class="collapse show"
+        aria-labelledby="headingPersonalDetail"
+        data-parent="#accordionRegistration"
+      >
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <div class="row">
+            <div class="col-sm-4 form-group">
+            <label>First Name
+              <label for="" class="requiredstart">*</label>
+                <input type="text" required name="firstname" [(ngModel)]="user.firstname" placeholder="Enter your first name"
+                  class="form-control">
+            </label>
+            </div>
+            <div class="col-sm-4 form-group">
+            <label>Middle Name
+              <label for="" class="requiredstart">*</label>
+                <input type="text" required name="middlename" [(ngModel)]="user.middlename" placeholder="Enter your middle name"
+                  class="form-control">
+            </label>
+            </div>
+            <div class="col-sm-4 form-group">
+            <label>Last Name
+              <label for="" class="requiredstart">*</label>
+                <input type="text" required name="lastname" [(ngModel)]="user.lastname" placeholder="Enter your last name"
+                  class="form-control">
+            </label>
+            </div>
+          </div>
+          <!-- <label>Name
+            <label for="" class="requiredstart">*</label>
+          </label>
+          <input type="text" required name="fullname" [(ngModel)]="user.fullname" placeholder="Enter your full name"
+            class="form-control"> -->
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+
+            <label>Gender</label>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-primary">
+                <i class="fa fa-male" aria-hidden="true"></i>
+                <input type="radio" [(ngModel)]="user.gender" name="gender"  value="Male" > Male
+              </label>
+              <label class="btn btn-primary">
+                <i class="fa fa-female" aria-hidden="true"></i>
+                <input type="radio" [(ngModel)]="user.gender" name="gender"  value="Female" > Female
+              </label>
+            </div>
+          
+            <!-- <label class="radio-inline"><input type="radio" name="gender" [(ngModel)]="user.gender" value=Male>Male</label>
+                    <label class="radio-inline"><input type="radio" name="gender" [(ngModel)]="user.gender"
+                        value=Female>Female</label> -->
+
+                        
+          </div>
+            <div class="col-sm-6 form-group">
+
+
+            <input type="file"  [(ngModel)]="user.userImage" (change)="onSelectedFile($event)" name="uploadimage" id="">
+          </div>
+
+        </div>
+       
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Mother Tongue</label>
+          <select class="form-control" name="motherTongue" [(ngModel)]="user.motherTongue">
+            <option class="hidden" selected disabled>Select Mother Tongue</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Urdu">Urdu</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Hindi">Hindi</option>
+          </select>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Clause (உட்பிரிவு)</label>
+          <input type="text" placeholder="" name="Clause" [(ngModel)]="user.Clause" class="form-control">
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Date of Birth</label>
+          <input type="date" placeholder="" name="dob" [(ngModel)]="user.dob" class="form-control">
+        </div>
+        <div class="col-sm-6 form-group">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <label>Birth Time</label>
+              <input type="date" placeholder="" name="birthTime" [(ngModel)]="user.birthTime" class="form-control">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label>Age</label>
+              <input type="number" placeholder="" name="age" [(ngModel)]="user.age" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Height</label>
+          <select class="form-control" name="height" [(ngModel)]="user.height">
+            <option value="">--- Select Height ---</option>
+            <option value="3.5">3ft.5in-105cm</option>
+            <option value="3.6">3ft.6in-107cm</option>
+            <option value="3.7">3ft.7in-110cm</option>
+            <option value="3.8">3ft.8in-112cm</option>
+            <option value="3.9">3ft.9in-115cm</option>
+            <option value="3.10">3ft.10in-117cm</option>
+            <option value="3.11">3ft.11in-120cm</option>
+            <option value="4">4ft-122cm</option>
+            <option value="4.1">4ft.1in-125cm</option>
+            <option value="4.2">4ft.2in-127cm</option>
+            <option value="4.3">4ft.3in-130cm</option>
+            <option value="4.4">4ft.4in-132cm</option>
+            <option value="4.5">4ft.5in-135cm</option>
+            <option value="4.6">4ft.6in-137cm</option>
+            <option value="4.7">4ft.7in-140cm</option>
+            <option value="4.8">4ft.8in-142cm</option>
+            <option value="4.9">4ft.9in-145cm</option>
+            <option value="4.10">4ft.10in-147cm</option>
+            <option value="4.11">4ft.11in-150cm</option>
+            <option value="5">5ft-152cm</option>
+            <option value="5.1">5ft.1in-155cm</option>
+            <option value="5.2">5ft.2in-157cm</option>
+            <option value="5.3">5ft.3in-160cm</option>
+            <option value="5.4">5ft.4in-162cm</option>
+            <option value="5.5">5ft.5in-165cm</option>
+            <option value="5.6">5ft.6in-167cm</option>
+            <option value="5.7">5ft.7in-170cm</option>
+            <option value="5.8">5ft.8in-172cm</option>
+            <option value="5.9">5ft.9in-175cm</option>
+            <option value="5.10">5ft.10in-177cm</option>
+            <option value="5.11">5ft.11in-180cm</option>
+            <option value="6">6ft-182cm</option>
+            <option value="6.1">6ft.1in-185cm</option>
+            <option value="6.2">6ft.2in-187cm</option>
+            <option value="6.3">6ft.3in-190cm</option>
+            <option value="6.4">6ft.4in-192cm</option>
+            <option value="6.5">6ft.5in-195cm</option>
+            <option value="6.6">6ft.6in-197cm</option>
+            <option value="6.7">6ft.7in-200cm</option>
+            <option value="6.8">6ft.8in-202cm</option>
+            <option value="6.9">6ft.9in-205cm</option>
+            <option value="6.10">6ft.10in-207cm</option>
+            <option value="6.11">6ft.11in-210cm</option>
+          </select>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Color</label>
+          <select class="form-control" name="color" [(ngModel)]="user.color">
+            <option value="">--- Select Complexion ---</option>
+            <option value="Fair">சிவப்பு</option>
+            <option value="Putuniram">புதுநிறம்</option>
+            <option value="Black">கருப்பு</option>
+            <option value="Brunette">மாநிறம்</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Qualification</label>
+          <input type="text" placeholder="" name="qualificaton" [(ngModel)]="user.qualificaton" class="form-control">
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Occupation</label>
+          <input type="text" placeholder="" name="occupation" [(ngModel)]="user.occupation" class="form-control">
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Work in</label>
+          <input type="text" placeholder="" name="work" [(ngModel)]="user.work" class="form-control">
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Salary (PA)</label>
+          <input type="text" name="earnings" [(ngModel)]="user.earnings" placeholder="" class="form-control">
+        </div>
+      </div>
+    
+    
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Physical fitness</label>
+          <select class="form-control" name="physicalFitness" [(ngModel)]="user.physicalFitness">
+            <option value="normal">இயல்பு நிலை</option>
+            <option value="physicallyChallanged">மாற்றுத் திறனாளி</option>
+          </select>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Marital Status</label>
+          <select class="form-control" name="maritalStatus" [(ngModel)]="user.maritalStatus">
+            <option value="unmarried">திருமணமாகதவர்</option>
+            <option value="remarry">மறுமணம்</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Religion</label>
+          <select class="form-control" name="religion" [(ngModel)]="user.religion">
+            <option value="">- தேர்ந்தெடு -</option>
+            <option value="Hindu" selected="">இந்து</option>
+            <option value="Christine">கிறிஸ்டின்</option>
+            <option value="Muslim">முஸ்லிம்</option>
+          </select>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Family God</label>
+          <input type="text" name="familyGod" [(ngModel)]="user.familyGod" placeholder="" class="form-control">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <label>Address</label>
+          <textarea name="address" [(ngModel)]="user.address" class="form-control" rows="5" id="comment"
+            name="address"></textarea>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>District</label>
+          <select name="distri" id="distri" name="district" [(ngModel)]="user.district"
+            class="form-control input-sm required">
+            <option value="">Select districts</option>
+            <option value="அரியலூர்">அரியலூர்</option>
+            <option value="சென்னை">சென்னை</option>
+            <option value="கோயம்புத்தூர்">கோயம்புத்தூர்</option>
+            <option value="கடலூர்">கடலூர்</option>
+            <option value="தர்மபுரி">தர்மபுரி</option>
+            <option value="திண்டுக்கல்">திண்டுக்கல்</option>
+            <option value="ஈரோடு">ஈரோடு</option>
+            <option value="காஞ்சிபுரம்">காஞ்சிபுரம்</option>
+            <option value="கன்னியாகுமரி">கன்னியாகுமரி</option>
+            <option value="கரூர்">கரூர்</option>
+            <option value="கிருஷ்ணகிரி">கிருஷ்ணகிரி</option>
+            <option value="மதுரை">மதுரை</option>
+            <option value="நாகப்பட்டினம்">நாகப்பட்டினம்</option>
+            <option value="நாமக்கல்">நாமக்கல்</option>
+            <option value="பெரம்பலூர்">பெரம்பலூர்</option>
+            <option value="புதுக்கோட்டை">புதுக்கோட்டை</option>
+            <option value="இராமநாதபுரம்">இராமநாதபுரம்</option>
+            <option value="சேலம்">சேலம்</option>
+            <option value="சிவகங்கை">சிவகங்கை</option>
+            <option value="தஞ்சாவூர்">தஞ்சாவூர்</option>
+            <option value="நீலகிரி">நீலகிரி</option>
+            <option value="தேனி">தேனி</option>
+            <option value="திருவள்ளூர்">திருவள்ளூர்</option>
+            <option value="திருவண்ணாமலை">திருவண்ணாமலை</option>
+            <option value="திருவாரூர்">திருவாரூர்</option>
+            <option value="திருநெல்வேலி">திருநெல்வேலி</option>
+            <option value="திருப்பூர்">திருப்பூர்</option>
+            <option value="திருச்சிராப்பள்ளி">திருச்சிராப்பள்ளி</option>
+            <option value="தூத்துக்குடி">தூத்துக்குடி</option>
+            <option value="வேலூர்">வேலூர்</option>
+            <option value="விழுப்புரம்">விழுப்புரம்</option>
+            <option value="விருதுநகர்">விருதுநகர்</option>
+            <option value="Other districts">Other districts</option>
+          </select>
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Phone No.</label>
+          <input type="text" class="form-control" name="phone1" [(ngModel)]="user.phone1">
+        </div>
+        <div class="col-sm-6 form-group">
+          <label>Secondary Phone no.</label>
+          <input type="text" class="form-control" name="phone2" [(ngModel)]="user.phone2">
+        </div>
+      </div>
+      
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label>Email Id</label>
+            <input type="text" class="form-control" name="mailid" [(ngModel)]="user.mailid">
+          </div> 
+          <div class="col-sm-6 form-group">
+            <label>Login Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="user.password">
+          </div>
+        </div>
+        <button class="btn btn-primary collapsed float-right" 
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseFamilyDetails"
+            aria-expanded="false"
+            aria-controls="collapseFamilyDetails">Next</button>
+         
+
+    </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFamilyDetails">
+        <h2 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseFamilyDetails"
+            aria-expanded="false"
+            aria-controls="collapseFamilyDetails"
+          >
+            Family Details
+          </button>
+        </h2>
+      </div>
+      <div
+        id="collapseFamilyDetails"
+        class="collapse"
+        aria-labelledby="headingFamilyDetails"
+        data-parent="#accordionRegistration"
+      >
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>Father's Name</label>
+        <input type="text" placeholder="Enter Father name" name="fathername" [(ngModel)]="user.fathername"
+          class="form-control">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>Mother's Name</label>
+        <input type="text" placeholder="Enter Mother name" name="mothername" [(ngModel)]="user.mothername"
+          class="form-control">
+      </div>
+    </div>
+  
+  
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>Father Occupation</label>
+        <input type="text" placeholder="Enter father Occupations" name="fatherOccupation"
+          [(ngModel)]="user.fatherOccupation" class="form-control">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>Mother Occupation</label>
+        <input type="text" placeholder="Enter mother Occupations" name="motherOccupation"
+          [(ngModel)]="user.motherOccupation" class="form-control">
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <div class="row">
+          <div class="col-sm-4 form-group">
+            Sibling           </div>
+          <div class="col-sm-4 form-group">
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">
+      <i class="fa fa-male" aria-hidden="true"></i>
+    </span>
+  </div>
+  <select class="form-control" name="sibblingsMale" [(ngModel)]="user.sibblingsMale">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+</div>
+
+
+            <!-- <label>Male</label>
+            <select class="form-control" name="sibblingsMale" [(ngModel)]="user.sibblingsMale">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select> -->
+          </div>
+          <div class="col-sm-4 form-group">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-female" aria-hidden="true"></i>
+                </span>
+              </div>
+              <select class="form-control" name="sibblingsFemale" [(ngModel)]="user.sibblingsFemale">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            
+            <!-- <label>Female</label>
+            <select class="form-control" name="sibblingsFemale" [(ngModel)]="user.sibblingsFemale">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 form-group">
+        <div class="row">
+          <div class="col-sm-4 form-group">
+            Married Sibling
+          </div>
+          <div class="col-sm-4 form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-male" aria-hidden="true"></i>
+                </span>
+              </div>
+              <select class="form-control" name="marriedSibblingsMale" [(ngModel)]="user.marriedSibblingsMale">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            <!-- <label>ஆண்</label>
+            <select class="form-control" name="marriedSibblingsMale" [(ngModel)]="user.marriedSibblingsMale">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select> -->
+          </div>
+          <div class="col-sm-4 form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-female" aria-hidden="true"></i>
+                </span>
+              </div>
+            <select class="form-control" name="marriedSibblingsMale" [(ngModel)]="user.marriedSibblingsFemale">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            </div>
+
+
+            <!-- <label>பெண்</label>
+            <select class="form-control" name="marriedSibblingsMale" [(ngModel)]="user.marriedSibblingsFemale">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>Origin(பூர்வீகம்)</label>
+        <input type="text" placeholder="" name="origin" [(ngModel)]="user.origin" class="form-control">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>Location</label>
+        <input type="text" placeholder="" name="native" [(ngModel)]="user.native" class="form-control">
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>Assets</label>
+        <input type="text" placeholder="" name="assets" [(ngModel)]="user.assets" class="form-control">
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>Dowry</label>
+        <input type="text" placeholder="" name="dowry" [(ngModel)]="user.dowry" class="form-control">
+      </div>
+    </div>
+
+    <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseHoroscopeDetails"
+      aria-expanded="false" aria-controls="collapseHoroscopeDetails">
+     Next
+    </button>
+
+  </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingHoroscopeDetails">
+        <h2 class="mb-0">
+          <button
+            class="btn  collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseHoroscopeDetails"
+            aria-expanded="false"
+            aria-controls="collapseHoroscopeDetails"
+          >
+            Horoscope Details
+          </button>
+        </h2>
+      </div>
+      <div
+        id="collapseHoroscopeDetails"
+        class="collapse"
+        aria-labelledby="headingHoroscopeDetails"
+        data-parent="#accordionRegistration"
+      >
+        <div class="card-body">
+           
+            <div class="col-sm-12">
+        
+        
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label>Star</label>
+                  <select class="form-control" name="star" [(ngModel)]="user.star">
+                    <option value="">Select Star</option>
+                    <option value="அசுவதி">Acuvati - அசுவதி</option>
+                    <option value="பரணி">Alabaster - பரணி</option>
+                    <option value="கார்த்திகை">கார்த்திகை</option>
+                    <option value="ரோஹினி">ரோஹினி</option>
+                    <option value="மிருகஷீரிஷம்">மிருகஷீரிஷம்</option>
+                    <option value="திருவாதிரை">திருவாதிரை</option>
+                    <option value="புனர்பூசம்">புனர்பூசம்</option>
+                    <option value="பூசம்">பூசம்</option>
+                    <option value="ஆயில்யம்">ஆயில்யம்</option>
+                    <option value="மகம்">மகம்</option>
+                    <option value="பூரம்">பூரம்</option>
+                    <option value="உத்திரம்">உத்திரம்</option>
+                    <option value="ஹஸ்தம்">ஹஸ்தம்</option>
+                    <option value="சித்திரை">சித்திரை</option>
+                    <option value="ஸ்வாதி">ஸ்வாதி</option>
+                    <option value="விசாகம்">விசாகம்</option>
+                    <option value="அனுஷம்">அனுஷம்</option>
+                    <option value="கேட்டை">கேட்டை</option>
+                    <option value="மூலம்">மூலம்</option>
+                    <option value="பூராடம்">பூராடம்</option>
+                    <option value="உத்திராடம்">உத்திராடம்</option>
+                    <option value="திருவோணம்">திருவோணம்</option>
+                    <option value="அவிட்டம்">அவிட்டம்</option>
+                    <option value="சதயம்">சதயம்</option>
+                    <option value="பூரட்டாதி">பூரட்டாதி</option>
+                    <option value="உத்திரட்டாதி">உத்திரட்டாதி</option>
+                    <option value="ரேவதி">ரேவதி</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <div class="row">
+                    <div class="col-sm-6 form-group">
+                      <label>Rasi</label>
+                      <select class="form-control" name="rasi" [(ngModel)]="user.rasi">
+                        <option value="">Select Rasi</option>
+                        <option value="மேஷம்">மேஷம்</option>
+                        <option value="ரிஷபம்">ரிஷபம்</option>
+                        <option value="மிதுனம்">மிதுனம்</option>
+                        <option value="கடகம்">கடகம்</option>
+                        <option value="சிம்மம்">சிம்மம்</option>
+                        <option value="கன்னி">கன்னி</option>
+                        <option value="துலாம்">துலாம்</option>
+                        <option value="விருச்சிகம்">விருச்சிகம்</option>
+                        <option value="தனுசு">தனுசு</option>
+                        <option value="மகரம்">மகரம்</option>
+                        <option value="கும்பம்">கும்பம்</option>
+                        <option value="மீனம்">மீனம்</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                      <label>Lagnam</label>
+                      <select class="form-control" name="lagnam" [(ngModel)]="user.lagnam">
+                        <option value="">Select Lagnam</option>
+                        <option value="மேஷம்">மேஷம்</option>
+                        <option value="ரிஷபம்">ரிஷபம்</option>
+                        <option value="மிதுனம்">மிதுனம்</option>
+                        <option value="கடகம்">கடகம்</option>
+                        <option value="சிம்மம்">சிம்மம்</option>
+                        <option value="கன்னி">கன்னி</option>
+                        <option value="துலாம்">துலாம்</option>
+                        <option value="விருச்சிகம்">விருச்சிகம்</option>
+                        <option value="தனுசு">தனுசு</option>
+                        <option value="மகரம்">மகரம்</option>
+                        <option value="கும்பம்">கும்பம்</option>
+                        <option value="மீனம்">மீனம்</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+        
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label>Directional Balance</label>
+                  <select class="form-control" name="directionBias" [(ngModel)]="user.directionBias">
+                    <option value="">Select Dhishai Iruphu</option>
+                    <option value="குரு">குரு</option>
+                    <option value="சனி">சனி</option>
+                    <option value="புதன்">புதன்</option>
+                    <option value="கேது">கேது</option>
+                    <option value="சுக்கிரன்">சுக்கிரன்</option>
+                    <option value="சூரியன்">சூரியன்</option>
+                    <option value="சந்திரன்">சந்திரன்</option>
+                    <option value="செவ்வாய்">செவ்வாய்</option>
+                    <option value="ராகு">ராகு</option>
+                    <option value="வியாழன்">வியாழன்</option>
+                  </select>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <div class="row">
+                    <div class="col-sm-4 form-group">
+                      <input type="text" placeholder="வருடம்" name="year" [(ngModel)]="user.year" class="form-control">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                      <input type="text" placeholder="மாதம்" name="month" [(ngModel)]="user.month" class="form-control">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                      <input type="text" placeholder="நாள்" name="day" [(ngModel)]="user.day" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row" style="text-align: center ; font-weight: 900">
+                <p>
+                  astrological chart : Use the below words to fill the astrological chart
+          
+                </p>
+                <p>
+                  Buthan : pu சூரியன் : sun ராகு : ragu வியாழன் : vij சுக்கிரன் : chk
+                </p>
+                <p>
+                  Saani : sat சந்திரன் : chan கேது : kee செவ்வாய் : sev லக்கனம் : lac
+                </p>
+              </div>
+        
+        
+              <div class="col-md-12 divborder1" style="margin-top: 1em;text-align:center;">
+                <div class="row">
+                  <div class="col-md-2 divborder1"></div>
+                  <div class=" col-xs-6 col-sm-6 col-md-4 divborder1 text-center">
+                    <table border="0" cellpadding="5" style="border-collapse: collapse" height="200">
+                      <tbody>
+                        <tr>
+                          <td height="50" width="50"><textarea name="ra1" [(ngModel)]="user.ra1" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi1" id="r1"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra2" [(ngModel)]="user.ra2" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi2" id="r2"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra3" [(ngModel)]="user.ra3" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi3" id="r3"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra4" [(ngModel)]="user.ra4" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi4" id="r4"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td height="50" width="50"><textarea name="ra5" [(ngModel)]="user.ra5" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi5" id="r5"></textarea></td>
+                          <td height="100" colspan="2" rowspan="2" align="center">ராசி</td>
+                          <td height="50" width="50"><textarea name="ra6" [(ngModel)]="user.ra6" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi6" id="r6"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td height="50" width="50"><textarea name="ra7" [(ngModel)]="user.ra7" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi7" id="r7"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra8" [(ngModel)]="user.ra8" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi8" id="r8"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td height="50" width="50"><textarea name="ra9" [(ngModel)]="user.ra9" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi9" id="r9"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra10" [(ngModel)]="user.ra10" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi10" id="r10"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra11" [(ngModel)]="user.ra11" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi11" id="r11"></textarea></td>
+                          <td height="50" width="50"><textarea name="ra12" [(ngModel)]="user.ra12" style="overflow: hidden;"
+                              rows="3" cols="5" name="rasi12" id="r12"></textarea></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class=" col-xs-12 col-sm-6 col-md-4 divborder1 text-center">
+                    <table border="0" cellpadding="5" style="border-collapse: collapse" height="200">
+                      <tbody>
+                        <tr>
+                          <td><textarea name="f1" [(ngModel)]="user.f1" style="overflow: hidden;" rows="3" cols="5" name="am1"
+                              id="a1"></textarea></td>
+                          <td><textarea name="f2" [(ngModel)]="user.f2" style="overflow: hidden;" rows="3" cols="5" name="am2"
+                              id="a2"></textarea></td>
+                          <td><textarea name="f3" [(ngModel)]="user.f3" style="overflow: hidden;" rows="3" cols="5" name="am3"
+                              id="a3"></textarea></td>
+                          <td><textarea name="f4" [(ngModel)]="user.f4" style="overflow: hidden;" rows="3" cols="5" name="am4"
+                              id="a4"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><textarea name="f5" [(ngModel)]="user.f5" style="overflow: hidden;" rows="3" cols="5" name="am5"
+                              id="a5"></textarea></td>
+                          <td height="100" colspan="2" rowspan="2" align="center">அம்சம்</td>
+                          <td><textarea name="f6" [(ngModel)]="user.f6" style="overflow: hidden;" rows="3" cols="5" name="am6"
+                              id="a6"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><textarea name="f7" [(ngModel)]="user.f7" style="overflow: hidden;" rows="3" cols="5" name="am7"
+                              id="a7"></textarea></td>
+                          <td><textarea name="f8" [(ngModel)]="user.f8" style="overflow: hidden;" rows="3" cols="5" name="am8"
+                              id="a8"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td><textarea name="f9" [(ngModel)]="user.f9" style="overflow: hidden;" rows="3" cols="5" name="am9"
+                              id="a9"></textarea></td>
+                          <td><textarea name="f10" [(ngModel)]="user.f10" style="overflow: hidden;" rows="3" cols="5"
+                              name="am10" id="a10"></textarea></td>
+                          <td><textarea name="f11" [(ngModel)]="user.f11" style="overflow: hidden;" rows="3" cols="5"
+                              name="am11" id="a11"></textarea></td>
+                          <td><textarea name="f12" [(ngModel)]="user.f12" style="overflow: hidden;" rows="3" cols="5"
+                              name="am12" id="a12"></textarea></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-md-2 divborder1"></div>
+                </div>
+              </div>
+              <div class="row">
+                                <div class="col-sm-6 form-group">
+                    <textarea name="otherMessage" [(ngModel)]="user.otherMessage"
+                      placeholder="Please describe yourself in brief! like what type of person you are!" rows="3" class="form-control">
+                                                                  </textarea>
+                  </div>
+
+               <div class="col-sm-6 form-group">
+                  <label>Expectation</label>
+                  <input type="text" name="expectations" [(ngModel)]="user.expectations" class="form-control">
+                </div>
+              </div>
+                
+              <div class="form-group">
+                <div class="checkbox">
+                  <label class="control-label">
+                    <input type="checkbox" name="terms" id="terms" value="Yes" style="transform: scale(1.5);" required=""> I
+                    Accept the
+                    <a class="pointer" (click)="open(content)">term and Conditions</a>
+                  </label>
+                </div>
+              </div>
+        
+                <div class="row">
+                  <div class="input-field col s12 ">
+                    <button class="btn btn-secondary" type="button" (click)="resetForm(registerUserForm)">Reset</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="!registerUserForm.valid">Submit</button>
+                  </div>
+                </div>
+
+            </div>
+        
+     
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+<app-footer></app-footer>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" style="color: blue" id="modal-basic-title">Terms and Conditions</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <p>PLEASE READ THESE TERMS AND CONDITIONS BEFORE REGISTRATION. </p>
+      <br>
+      <ul>
+        Dear User,
+        <li>You are at least 18 years old for women and 21 years old for men.</li>
+        <li>Any law from entering into a contract does not disable you.</li>
+        <li>It is essential that all correspondence with other members should take place according to these guidelines
+          and for the purposes of marriage only. Any individual found attempting to act outside of these boundaries
+          would have their membership terminated.</li>
+        <li>The member is responsible for maintaining the security of their password and any damages caused by others
+          gaining access to the account or membership. Vetrimatrimony.com shall not be responsible for any damages
+          caused by loss of password, or others gaining access to the account or membership.</li>
+        <li>The member shall not give any false or misleading information in the account or in communication with other
+          members.</li>
+        <li>Your membership will automatically be suspended if you send "abusive, obscene or sexually oriented"
+          message's to other members.</li>
+        <li>The member shall not share the account with another person or allow anyone else to use the account for any
+          purpose.</li>
+        <li>Vetrimatrimony.com reserves the right to modify the Terms &amp; Conditions at any time and without prior
+          notice to its Users. We reserve the right to modify or discontinue our services or any User's account with or
+          without notice to any User, without liability to any User or any third party. The service may be temporarily
+          unavailable from time to time for maintenance or other reasons.</li>
+        <li>As with any Internet based system there is always the possibility for the transmission of computer viruses.
+          Members are strongly advised to keep their anti-virus software up to date. Vetrimatrimony.com cannot be held
+          responsible in anyway for any transmission of computer viruses.</li>
+        <li>This site or any portion of this site may not be reproduced, duplicated, copied, sold, resold, visited, or
+          otherwise exploited for any commercial purpose without express written consent of Vetrimatrimony.com.</li>
+        <li>Any unauthorized use terminates the permission or license granted by Vetrimatrimony.com. You may not use any
+          Vetrimatrimony.com logo or other proprietary graphic or trademark as part of the link without express written
+          permission.</li>
+        <li>Suggestions and complaints are to be first addressed to vetri@vetrimatrimony.com</li>
+      </ul>
+
+      <span>
+
+      </span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">close</button>
+  </div>
+</ng-template>

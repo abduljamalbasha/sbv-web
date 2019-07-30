@@ -1,21 +1,27 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Users } from "../models/user.module";
+import { UserDetail } from "../models/userDetail.module";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class RegistrationService {
-  selectedUser: Users;
-  users: Users[];
+  selectedUser: UserDetail;
+  UserDetail: UserDetail[];
 
   readonly baseURL = "http://localhost:2000/users/";
+  readonly baseUrl1 = "http://localhost:8080/api/";
 
   constructor(private http: HttpClient) {}
 
-  convertObjectToFormdata(user: Users) {
+  convertObjectToFormdata(user: UserDetail) {
     const fd = new FormData();
     fd.append("fullname", user.fullname);
+    fd.append("firstname", user.firstname);
+    fd.append("middlename", user.middlename);
+    fd.append("lastname", user.lastname);
     fd.append("gender", user.gender);
     fd.append("userImage", user.userImage);
     fd.append("motherTongue", user.motherTongue);
@@ -89,16 +95,26 @@ export class RegistrationService {
     return fd;
   }
 
-  registerMember(user: Users) {
+  registerMember(user: UserDetail) {
     const userDetail = this.convertObjectToFormdata(user);
-    return this.http.post(this.baseURL, userDetail);
+    //return this.http.post(this.baseURL, userDetail);
+    return this.http.post("http://localhost:8080/api/userDetail/", userDetail);
   }
 
   getAllMember() {
-    return this.http.get(this.baseURL);
+    return this.http.get(this.baseUrl1 + "users");
   }
 
   getMemberById(id: string) {
-    return this.http.get(this.baseURL + id);
+    //return this.http.get(this.baseURL + id);
+    return this.http.get("http://localhost:8080/api/user/" + id);
+  }
+
+  getMemberDetailById(id: string) {
+    return this.http.get("http://localhost:8080/api/userDetail/" + id);
+  }
+  //User Login Check
+  CheckUserLogin(user: Users) {
+    return this.http.post("http://localhost:8080/api/checkuser", user);
   }
 }
