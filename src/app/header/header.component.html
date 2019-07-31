@@ -154,8 +154,15 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
+          <!-- <img
+            class=" img-fluid"
+            [src]="serverdomain + user.userImage.replace('public', '')"
+            class="rounded-circle z-depth-0"
+            alt="avatar image"
+          /> -->
           <img
-            src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg"
+            class=" img-fluid"
+            [src]="serverdomain + user.userImage"
             class="rounded-circle z-depth-0"
             alt="avatar image"
           />

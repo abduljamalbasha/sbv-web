@@ -17,7 +17,7 @@ export class RecentlyJoinMemberComponent implements OnInit {
   users: Users;
   usersDetail: UserDetail[];
 
-  serverdomain = environment.Serverdomain;
+  serverdomain = environment.GCPStorageBucketUrl; //environment.Serverdomain;
 
   constructor(
     private memberServices: RegistrationService,
