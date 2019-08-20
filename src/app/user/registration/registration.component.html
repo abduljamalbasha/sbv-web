@@ -87,7 +87,7 @@
             <div class="col-sm-6 form-group">
 
               <div class="pic-container pic-medium pic-circle">
-  <img class="pic" src="../../../assets/Images/uploadphoto.png" alt="">
+  <img class="pic" [src]="defaultimg" alt="" (change)="displayPhoto($event)">
   <div class="pic-overlay">
       <!-- <a><i class="fa fa-window-close-o" aria-hidden="true"></i></a> -->
       <input type="file" [(ngModel)]="user.userImage" (change)="onSelectedFile($event)" name="uploadimage" accept="image/*">

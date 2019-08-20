@@ -21,6 +21,7 @@ export class RegistrationComponentNew implements OnInit {
 
   //test jamal
   selectedFiles: FileList;
+  defaultimg = "../../../assets/Images/uploadphoto.png";
 
   user: UserDetail = {
     Id: null,
@@ -200,6 +201,15 @@ export class RegistrationComponentNew implements OnInit {
   }
 
   onSelectedFile(event) {
+    //Load your image while selecting the DP
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        this.defaultimg = e.target["result"];
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
     this.user.userImage = <File>event.target.files[0];
     console.log(event.target.files);
     if (event.target.files.lenght > 0) {
