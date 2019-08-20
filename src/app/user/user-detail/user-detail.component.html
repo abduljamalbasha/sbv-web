@@ -9,23 +9,7 @@
   />
   <br />
 
-  <table>
-    <thead>
-      Name
-    </thead>
-    <thead>
-      Email
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ userdetail.fullname }}</td>
-      </tr>
-      <tr>
-        <td>{{ userdetail.emailId }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- <table border="1">
+  <table style="margin-left:20%">
     <tbody>
       <tr>
         <td>
@@ -39,23 +23,23 @@
           </tr>
           <tr>
             <td><label for="">Qualification</label></td>
-            <td>: {{ UserDetail.qualificaton }}</td>
+            <td>: {{ userdetail.qualificaton }}</td>
           </tr>
           <tr>
             <td><label for="">Work</label></td>
-            <td>: {{ UserDetail.occupation }}</td>
+            <td>: {{ userdetail.occupation }}</td>
           </tr>
           <tr>
             <td><label for="">Martial Status</label></td>
-            <td>: {{ UserDetail.maritalStatus }}</td>
+            <td>: {{ userdetail.maritalStatus }}</td>
           </tr>
           <tr>
             <td><label for="">Father's Name</label></td>
-            <td>: {{ UserDetail.fathername }}</td>
+            <td>: {{ userdetail.fathername }}</td>
           </tr>
           <tr>
             <td><label for="">Mother's Name</label></td>
-            <td>: {{ UserDetail.mothername }}</td>
+            <td>: {{ userdetail.mothername }}</td>
           </tr>
           <tr>
             <td><label for="">Family Status</label></td>
@@ -66,11 +50,11 @@
             <td>
               :
               {{
-                UserDetail.rasi +
+                userdetail.rasi +
                   "/" +
-                  UserDetail.star +
+                  userdetail.star +
                   "/" +
-                  UserDetail.lagnam
+                  userdetail.lagnam
               }}
             </td>
           </tr>
@@ -88,13 +72,13 @@
                 </tr>
                 <tr>
                   <td>Elder</td>
-                  <td>{{ UserDetail.sibblingsMale }}</td>
+                  <td>{{ userdetail.sibblingsMale }}</td>
                   <td>0</td>
                 </tr>
                 <tr>
                   <td>Younger</td>
                   <td>0</td>
-                  <td>{{ UserDetail.marriedSibblingsMale }}</td>
+                  <td>{{ userdetail.marriedSibblingsMale }}</td>
                 </tr>
               </table>
             </td>
@@ -113,31 +97,31 @@
                 </tr>
                 <tr>
                   <td>Elder</td>
-                  <td>{{ UserDetail.sibblingsFemale }}</td>
+                  <td>{{ userdetail.sibblingsFemale }}</td>
                   <td>0</td>
                 </tr>
                 <tr>
                   <td>Younger</td>
                   <td>0</td>
-                  <td>{{ UserDetail.marriedSibblingsFemale }}</td>
+                  <td>{{ userdetail.marriedSibblingsFemale }}</td>
                 </tr>
               </table>
             </td>
           </tr>
           <tr>
             <td><label for="">Addres</label></td>
-            <td>: {{ UserDetail.address }}</td>
+            <td>: {{ userdetail.address }}</td>
           </tr>
           <tr>
             <td><label for="">Phone</label></td>
-            <td>: {{ UserDetail.phone1 }}</td>
+            <td>: {{ userdetail.phone1 }}</td>
           </tr>
         </td>
 
         <td colspan="14">
           <img
             class=" img-fluid"
-            [src]="serverdomain + UserDetail.userImage.replace('public', '')"
+            [src]="serverdomain + userdetail.userImage"
             alt="card image"
             height="100%"
           />
@@ -160,34 +144,34 @@
                 >
                   <tbody>
                     <tr>
-                      <td height="50" width="50">{{ UserDetail.ra1 }}</td>
-                      <td height="50" width="50">{{ UserDetail.ra2 }}</td>
-                      <td height="50" width="50">{{ UserDetail.ra3 }}</td>
-                      <td height="50" width="50">{{ UserDetail.ra4 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra1 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra2 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra3 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra4 }}</td>
                     </tr>
                     <tr>
-                      <td height="50" width="50">{{ UserDetail.ra5 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra5 }}</td>
                       <td height="100" colspan="2" rowspan="2" align="center">
                         ராசி
                       </td>
-                      <td height="50" width="50">{{ UserDetail.ra6 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra6 }}</td>
                     </tr>
                     <tr>
-                      <td height="50" width="50">{{ UserDetail.ra7 }}</td>
-                      <td height="50" width="50">{{ UserDetail.ra8 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra7 }}</td>
+                      <td height="50" width="50">{{ userdetail.ra8 }}</td>
                     </tr>
                     <tr>
                       <td height="50" width="50">
-                        {{ UserDetail.ra9 }}
+                        {{ userdetail.ra9 }}
                       </td>
                       <td height="50" width="50">
-                        {{ UserDetail.ra10 }}
+                        {{ userdetail.ra10 }}
                       </td>
                       <td height="50" width="50">
-                        {{ UserDetail.ra11 }}
+                        {{ userdetail.ra11 }}
                       </td>
                       <td height="50" width="50">
-                        {{ UserDetail.ra12 }}
+                        {{ userdetail.ra12 }}
                       </td>
                     </tr>
                   </tbody>
@@ -203,49 +187,49 @@
                   <tbody>
                     <tr>
                       <td>
-                        {{ UserDetail.f1 }}
+                        {{ userdetail.f1 }}
                       </td>
                       <td>
-                        {{ UserDetail.f2 }}
+                        {{ userdetail.f2 }}
                       </td>
                       <td>
-                        {{ UserDetail.f3 }}
+                        {{ userdetail.f3 }}
                       </td>
                       <td>
-                        {{ UserDetail.f4 }}
+                        {{ userdetail.f4 }}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        {{ UserDetail.f5 }}
+                        {{ userdetail.f5 }}
                       </td>
                       <td height="100" colspan="2" rowspan="2" align="center">
                         அம்சம்
                       </td>
                       <td>
-                        {{ UserDetail.f6 }}
+                        {{ userdetail.f6 }}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        {{ UserDetail.f7 }}
+                        {{ userdetail.f7 }}
                       </td>
                       <td>
-                        {{ UserDetail.f8 }}
+                        {{ userdetail.f8 }}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        {{ UserDetail.f9 }}
+                        {{ userdetail.f9 }}
                       </td>
                       <td>
-                        {{ UserDetail.f10 }}
+                        {{ userdetail.f10 }}
                       </td>
                       <td>
-                        {{ UserDetail.f11 }}
+                        {{ userdetail.f11 }}
                       </td>
                       <td>
-                        {{ UserDetail.f12 }}
+                        {{ userdetail.f12 }}
                       </td>
                     </tr>
                   </tbody>
@@ -257,5 +241,5 @@
         </td>
       </tr>
     </tbody>
-  </table> -->
+  </table>
 </div>

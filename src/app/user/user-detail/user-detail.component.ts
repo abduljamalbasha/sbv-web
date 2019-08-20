@@ -36,7 +36,7 @@ export class UserDetailComponent
     private route: ActivatedRoute
   ) {}
 
-  serverdomain = environment.Serverdomain;
+  serverdomain = environment.GCPStorageBucketUrl;
 
   user: User;
   userdetail: UserDetail;

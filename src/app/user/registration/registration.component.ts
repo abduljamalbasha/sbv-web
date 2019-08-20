@@ -204,18 +204,19 @@ export class RegistrationComponentNew implements OnInit {
     console.log(event.target.files);
     if (event.target.files.lenght > 0) {
       this.user.userImage = event.target.files[0];
-
-      //test jamal
       this.selectedFiles = event.target.files;
     }
   }
   onSubmit(NewUser: UserDetail) {
-    console.log(NewUser.gender);
     if (NewUser.firstname != "") {
       this.registrationService.registerMember(NewUser).subscribe(res => {
-        //this.resetForm();
+        this.resetForm();
         //console.log(res);
-        this.notifyService.showSuccessWithTimeout("hello jamla", "title", 1000);
+        this.notifyService.showSuccessWithTimeout(
+          "Your information inserted Successfully",
+          "Sucess",
+          1000
+        );
       });
     }
   }

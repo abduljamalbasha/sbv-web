@@ -86,8 +86,15 @@
           </div>
             <div class="col-sm-6 form-group">
 
-
-            <input type="file"  [(ngModel)]="user.userImage" (change)="onSelectedFile($event)" name="uploadimage" id="">
+              <div class="pic-container pic-medium pic-circle">
+  <img class="pic" src="../../../assets/Images/uploadphoto.png" alt="">
+  <div class="pic-overlay">
+      <!-- <a><i class="fa fa-window-close-o" aria-hidden="true"></i></a> -->
+      <input type="file" [(ngModel)]="user.userImage" (change)="onSelectedFile($event)" name="uploadimage" accept="image/*">
+      <!-- <a><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> -->
+  </div>
+</div>
+            
           </div>
 
         </div>

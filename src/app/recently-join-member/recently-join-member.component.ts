@@ -51,6 +51,11 @@ export class RecentlyJoinMemberComponent implements OnInit {
   downloadFile(event) {
     //console.log(event.target.id);
     this.router.navigate(["/userDetail", event.target.id]);
+
+    // this.router.navigate([]).then(result => {
+    //   window.open(["/userDetail", event.target.id], "_blank");
+    // });
+
     // const doc = new jspdf();
     // const content = this.pdfcontent.nativeElement;
     // html2canvas(content).then(canvas => {

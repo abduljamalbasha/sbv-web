@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseHref: "/",
-  Serverdomain: "http://localhost:8080/",
+  Serverdomain: "http://localhost:8080/api/",
   GCPStorageBucketUrl: "https://storage.cloud.google.com/myimagefiles/"
 };
 

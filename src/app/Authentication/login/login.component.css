@@ -1,4 +1,4 @@
-#login img {
+/* #login img {
   margin: 10px 0;
 }
 #login .center {
@@ -16,8 +16,17 @@
 #login .login-form .logininput {
   padding: 20px;
   width: 100%;
-}
+} */
 
 .add-on {
   padding: 20px !important;
+}
+
+.fillLogin {
+  position: relative;
+  border: 1px dashed red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }

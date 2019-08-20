@@ -10,39 +10,44 @@ import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule, RoutingComponents } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
+
 import { AdvanceSearchComponent } from "./advance-search/advance-search.component";
-import { RecentlyJoinMemberComponent } from "./recently-join-member/recently-join-member.component";
 import { NgbdCarouselConfig } from "./carousel-banner/carousel-banner.component";
-import { ContactUsComponent } from "./contact-us/contact-us.component";
+import { FileuploadComponent } from "./features/fileupload/fileupload.component";
 import { CommonModule } from "@angular/common";
 import { TransferHttpCacheModule } from "@nguniversal/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgtUniversalModule } from "@ng-toolkit/universal";
+
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
+import { RecentlyJoinMemberComponent } from "./recently-join-member/recently-join-member.component";
+import { ContactUsComponent } from "./contact-us/contact-us.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { FileuploadComponent } from "./features/fileupload/fileupload.component";
 import { UserDetailComponent } from "./user/user-detail/user-detail.component";
 import { LoginComponent } from "./Authentication/login/login.component";
 import { RegistrationComponentNew } from "./user/registration/registration.component";
-
-import { MaterialModulesModule } from "./shared/material-modules/material-modules.module";
+import { NewLoginComponent } from "./Authentication/new-login/new-login.component";
+import { NewContactusComponent } from './new-contactus/new-contactus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NgbdCarouselConfig,
+    RoutingComponents,
+    FileuploadComponent,
+    AdvanceSearchComponent,
     HeaderComponent,
     FooterComponent,
-    AdvanceSearchComponent,
     RecentlyJoinMemberComponent,
-    NgbdCarouselConfig,
     ContactUsComponent,
-    RoutingComponents,
     PageNotFoundComponent,
-    FileuploadComponent,
     UserDetailComponent,
     LoginComponent,
-    RegistrationComponentNew
+    RegistrationComponentNew,
+    NewLoginComponent,
+    AdvanceSearchComponent,
+    NewContactusComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
@@ -55,11 +60,7 @@ import { MaterialModulesModule } from "./shared/material-modules/material-module
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    NoopAnimationsModule,
-
-    // MatCheckboxModule,
-    // MatButtonModule,
-    MaterialModulesModule
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
   baseHref: "/",
-  Serverdomain: "http://localhost:2000/"
+  Serverdomain: "https://plated-campaign-247606.appspot.com/api/",
+  GCPStorageBucketUrl: "https://storage.cloud.google.com/myimagefiles/"
 };
